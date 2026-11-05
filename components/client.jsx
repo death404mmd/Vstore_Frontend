@@ -46,8 +46,10 @@ export function ContactForm() {
     const form = e.currentTarget;
     setState("sending");
     try {
+      const url = process.env.NEXT_PUBLIC_FORM_URL; // آدرس سرویس فرم یا بک‌اند (در Render تنظیم می‌شود)
+      if (!url) { setState("off"); return; }
       const body = JSON.stringify({ ...Object.fromEntries(new FormData(form)), type });
-      const r = await fetch("/api/contact", { method: "POST", headers: { "Content-Type": "application/json" }, body });
+      const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body });
       if (r.ok) form.reset();
       setState(r.ok ? "ok" : "err");
     } catch {
@@ -69,6 +71,7 @@ export function ContactForm() {
         {state === "sending" ? "در حال ارسال…" : "ارسال پیام"}
       </button>
       {state === "ok" && <p className="note">پیامت ثبت شد. به‌زودی جواب می‌دهیم.</p>}
+      {state === "off" && <p className="note">فرم هنوز به جایی وصل نیست. فعلاً از لینک‌های پایین پیام بده.</p>}
       {state === "err" && <p className="note">ارسال نشد. دوباره تلاش کن یا از لینک‌های پایین پیام بده.</p>}
     </form>
   );

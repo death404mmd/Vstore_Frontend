@@ -1,27 +1,17 @@
-import { db } from "@/lib/db";
+import { PROJECTS } from "@/lib/projects";
 import { BRAND, KICKER, INTRO, MARQUEE, SERVICES, STEPS, TEAM, LINKS } from "@/lib/content";
 import { StartButton, ContactForm, Glow } from "@/components/client";
-
-export const dynamic = "force-dynamic";
 
 const T = ({ children }) =>
   String(children).startsWith("[") ? <span className="ph">{children}</span> : children;
 const fa = (n) => n.toLocaleString("fa-IR");
 
-async function getProjects() {
-  try {
-    return await db.project.findMany({ where: { published: true }, orderBy: [{ sort: "asc" }, { id: "asc" }] });
-  } catch {
-    return [];
-  }
-}
-
 export default async function Page() {
-  const projects = await getProjects();
+  const projects = PROJECTS;
   return (
     <>
       <nav className="nav">
-        <a className="logo" href="/img/logo.png"><T>{BRAND}</T></a>
+        <a className="logo" href="#"><T>{BRAND}</T></a>
         <ul>
           <li><a href="#services">خدمات</a></li>
           <li><a href="#works">نمونه‌کارها</a></li>
