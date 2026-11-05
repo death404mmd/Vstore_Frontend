@@ -21,7 +21,7 @@ export default async function Page() {
   return (
     <>
       <nav className="nav">
-        <a className="logo" href="#"><T>{BRAND}</T></a>
+        <a className="logo" href="/img/logo.png"><T>{BRAND}</T></a>
         <ul>
           <li><a href="#services">خدمات</a></li>
           <li><a href="#works">نمونه‌کارها</a></li>
