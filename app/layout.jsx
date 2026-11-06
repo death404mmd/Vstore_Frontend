@@ -2,7 +2,7 @@ import "vazirmatn/Vazirmatn-font-face.css";
 import "./globals.css";
 
 export const metadata = {
-  title: "[نام برند] | سایتی که می‌فروشد",
+  title: "Vstore",
   description: "طراحی و ساخت سایت فروشگاهی، شرکتی و پنل مدیریت",
 };
 export const viewport = { width: "device-width", initialScale: 1, viewportFit: "cover" };

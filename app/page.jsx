@@ -1,5 +1,5 @@
 import { PROJECTS } from "@/lib/projects";
-import { BRAND, KICKER, INTRO, MARQUEE, SERVICES, STEPS, TEAM, LINKS } from "@/lib/content";
+import { BRAND, KICKER, INTRO, MARQUEE, SERVICES, STEPS, LINKS } from "@/lib/content";
 import { StartButton, ContactForm, Glow } from "@/components/client";
 
 const T = ({ children }) =>
@@ -11,26 +11,27 @@ export default async function Page() {
   return (
     <>
       <nav className="nav">
-        <a className="logo" href="#"><T>{BRAND}</T></a>
+        <a className="logo" href="#"><T>Vstore</T></a>
         <ul>
           <li><a href="#services">خدمات</a></li>
           <li><a href="#works">نمونه‌کارها</a></li>
-          <li><a href="#about">درباره ما</a></li>
           <li><a href="#contact">تماس</a></li>
         </ul>
         <StartButton className="mini">شروع پروژه</StartButton>
       </nav>
 
       <Glow className="hero">
-        <div className="wrap">
-          <p className="kicker">{KICKER}</p>
-          <h1>سایتی می‌سازیم که <em>می‌فروشد.</em></h1>
-          <div className="hero-row">
-            <p>{INTRO.split("[")[0]}{INTRO.includes("[") && <T>{"[" + INTRO.split("[")[1]}</T>}</p>
+        <div className="hero-stage">
+          <img className="hero-gif" src="/hero.gif" alt="" />
+          <div className="hero-cta">
             <StartButton className="cta">پروژه‌ات را شروع کن</StartButton>
           </div>
         </div>
-        <div className="sticker" aria-hidden="true">از ایده<br />تا فروش</div>
+        <div className="hero-text"><div className="wrap">
+          
+          <div className="hero-row">
+          </div>
+        </div></div>
       </Glow>
 
       <div className="marquee" aria-hidden="true">
@@ -79,13 +80,6 @@ export default async function Page() {
           </ol>
         </div></section>
 
-        <section id="about" className="band"><div className="wrap">
-          <h2 className="sec"><span>{fa(4)}</span> ما کی هستیم</h2>
-          <div className="team">
-            {TEAM.map((m, i) => <div key={i}><b><T>{m.name}</T></b><T>{m.role}</T></div>)}
-          </div>
-        </div></section>
-
         <section id="contact" className="contact"><div className="wrap">
           <h2 className="sec">پروژه‌ات چیه؟</h2>
           <ContactForm />
@@ -95,7 +89,7 @@ export default async function Page() {
         </div></section>
       </main>
 
-      <footer>© <T>[سال]</T> <T>{BRAND}</T></footer>
+      <footer>© <T>2026</T> <T>{BRAND}</T></footer>
     </>
   );
 }
