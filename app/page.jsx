@@ -88,14 +88,14 @@ export default async function Page() {
           <h2 className="sec"><span>{fa(4)}</span> قیمت تقریبی پروژه‌ات</h2>
           <Quote />
         </div></section>
-
+{/*
         <section id="contact" className="contact"><div className="wrap">
           <h2 className="sec">پروژه‌ات چیه؟</h2>
           <ContactForm />
           <div className="links">
             {LINKS.map((l) => <a key={l.label} href={l.href} className={l.href === "#" ? "ph" : ""}>{l.label}</a>)}
           </div>
-        </div></section>
+        </div></section> */}
       </main>
 
       <footer>© <T>[سال]</T> <T>{BRAND}</T></footer>
