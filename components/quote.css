@@ -1,3 +1,4 @@
 .qdlg form{display:grid;gap:12px;max-width:none}
 .qdlg input{border-color:var(--line)}
 .qdlg .sum{color:var(--mut);font-size:15px;line-height:1.7}
+.qdlg{overflow-x:hidden;background:color-mix(in srgb,var(--card) 88%,transparent);backdrop-filter:blur(6px)}

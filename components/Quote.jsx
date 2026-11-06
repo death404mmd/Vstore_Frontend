@@ -86,7 +86,7 @@ export default function Quote() {
             <p className="sum">{summary}</p>
             <input name="name" placeholder="نام" aria-label="نام" required maxLength={100} autoComplete="name" />
             <input name="contact" type="tel" inputMode="tel" placeholder="شماره تماس" aria-label="شماره تماس" required minLength={7} maxLength={30} autoComplete="tel" />
-            <input name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: "absolute", left: "-9999px" }} />
+            <div hidden><input name="website" tabIndex={-1} autoComplete="off" /></div>
             <button className="cta" disabled={status === "sending"}>{status === "sending" ? "در حال ارسال…" : "ثبت درخواست"}</button>
             {status === "err" && <p className="note">ارسال نشد. دوباره تلاش کن.</p>}
             {status === "off" && <p className="note">سیستم ثبت هنوز وصل نیست.</p>}

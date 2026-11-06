@@ -69,7 +69,7 @@ export function ContactForm() {
       <input name="name" placeholder="نام" aria-label="نام" required maxLength={100} />
       <input name="contact" placeholder="شماره تماس یا ایمیل" aria-label="راه تماس" required minLength={3} maxLength={150} />
       <textarea name="body" rows="4" maxLength={2000} placeholder="در یکی دو جمله بگو چه سایتی می‌خواهی" aria-label="توضیح پروژه" />
-      <input name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ position: "absolute", left: "-9999px" }} />
+      <div hidden><input name="website" tabIndex={-1} autoComplete="off" /></div>
       <button className="cta" disabled={state === "sending"}>
         {state === "sending" ? "در حال ارسال…" : "ارسال پیام"}
       </button>
