@@ -1,6 +1,7 @@
 import { PROJECTS } from "@/lib/projects";
 import { BRAND, KICKER, INTRO, MARQUEE, SERVICES, STEPS, LINKS } from "@/lib/content";
 import { StartButton, ContactForm, Glow } from "@/components/client";
+import Quote from "@/components/Quote";
 
 const T = ({ children }) =>
   String(children).startsWith("[") ? <span className="ph">{children}</span> : children;
@@ -11,10 +12,11 @@ export default async function Page() {
   return (
     <>
       <nav className="nav">
-        <a className="logo" href="#"><T>Vstore</T></a>
+        <a className="logo" href="#"><T>{BRAND}</T></a>
         <ul>
           <li><a href="#services">خدمات</a></li>
           <li><a href="#works">نمونه‌کارها</a></li>
+          <li><a href="#quote">قیمت</a></li>
           <li><a href="#contact">تماس</a></li>
         </ul>
         <StartButton className="mini">شروع پروژه</StartButton>
@@ -22,14 +24,16 @@ export default async function Page() {
 
       <Glow className="hero">
         <div className="hero-stage">
-          <img className="hero-gif" src="/hero.gif" alt="" />
+          <img className="hero-gif" src="/hero.gif" alt="" decoding="async" fetchPriority="high" />
           <div className="hero-cta">
             <StartButton className="cta">پروژه‌ات را شروع کن</StartButton>
           </div>
         </div>
         <div className="hero-text"><div className="wrap">
-          
+          <p className="kicker">{KICKER}</p>
+          <h1>Vstore a <em>will store</em></h1>
           <div className="hero-row">
+            <p>{INTRO.split("[")[0]}{INTRO.includes("[") && <T>{"[" + INTRO.split("[")[1]}</T>}</p>
           </div>
         </div></div>
       </Glow>
@@ -80,6 +84,11 @@ export default async function Page() {
           </ol>
         </div></section>
 
+        <section id="quote" className="quote"><div className="wrap">
+          <h2 className="sec"><span>{fa(4)}</span> قیمت تقریبی پروژه‌ات</h2>
+          <Quote />
+        </div></section>
+
         <section id="contact" className="contact"><div className="wrap">
           <h2 className="sec">پروژه‌ات چیه؟</h2>
           <ContactForm />
@@ -89,7 +98,7 @@ export default async function Page() {
         </div></section>
       </main>
 
-      <footer>© <T>2026</T> <T>{BRAND}</T></footer>
+      <footer>© <T>[سال]</T> <T>{BRAND}</T></footer>
     </>
   );
 }

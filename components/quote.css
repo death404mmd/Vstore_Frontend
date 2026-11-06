@@ -1,0 +1,3 @@
+.qdlg form{display:grid;gap:12px;max-width:none}
+.qdlg input{border-color:var(--line)}
+.qdlg .sum{color:var(--mut);font-size:15px;line-height:1.7}

@@ -1,2 +1,2 @@
-// خروجی استاتیک: بعد از build پوشه out ساخته می‌شود (برای Render Static Site)
-export default { output: "export" };
+// خروجی استاتیک (Render Static Site). trailingSlash: آدرس /admin/ روی هر هاستی کار کند
+export default { output: "export", trailingSlash: true };
