@@ -84,7 +84,7 @@ export default async function Page() {
           </ol>
         </div></section>
 
-        <section id="quote" className="quote"><div className="wrap">
+        <section id="contact" className="quote"><div className="wrap">
           <h2 className="sec"><span>{fa(4)}</span> قیمت تقریبی پروژه‌ات</h2>
           <Quote />
         </div></section>
@@ -98,7 +98,7 @@ export default async function Page() {
         </div></section> */}
       </main>
 
-      <footer>© <T>[سال]</T> <T>{BRAND}</T></footer>
+      <footer>© <T>2026</T> <T>{BRAND}</T></footer>
     </>
   );
 }
