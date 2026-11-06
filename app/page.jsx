@@ -24,7 +24,7 @@ export default async function Page() {
 
       <Glow className="hero">
         <div className="hero-stage">
-          <img className="hero-gif" src="/hero.gif" alt="" decoding="async" fetchPriority="high" />
+          <img className="hero-gif" src="/hero22.gif" alt="" decoding="async" fetchPriority="high" />
           <div className="hero-cta">
             <StartButton className="cta">پروژه‌ات را شروع کن</StartButton>
           </div>
