@@ -1,0 +1,117 @@
+/* الگوهای نامنظم و شفاف پس‌زمینه (آبی و صورتی) */
+
+:root {
+    --sky: #4f7bff;
+    /* آبی روشن لکه‌ها */
+    --deco: 13%;
+    /* شفافیت: کمتر = محوتر (مثلاً 8%)، بیشتر = پررنگ‌تر (مثلاً 20%) */
+}
+
+body {
+    position: relative
+}
+
+.bgart {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none
+}
+
+.bgart i {
+    position: absolute;
+    width: clamp(150px, 26vw, 380px);
+    aspect-ratio: 1.15;
+    background: color-mix(in srgb, var(--brand2, #ff4fa0) var(--deco), transparent);
+    border-radius: 62% 38% 55% 45%/48% 58% 42% 52%
+}
+
+.bgart i:nth-child(1) {
+    top: 7%;
+    right: -7vw;
+    transform: rotate(18deg)
+}
+
+.bgart i:nth-child(2) {
+    top: 13%;
+    left: -9vw;
+    width: clamp(180px, 32vw, 460px);
+    background: color-mix(in srgb, var(--sky) var(--deco), transparent);
+    border-radius: 38% 62% 40% 60%/60% 40% 60% 40%;
+    transform: rotate(-24deg)
+}
+
+.bgart i:nth-child(3) {
+    top: 26%;
+    right: 38vw;
+    width: clamp(90px, 13vw, 190px);
+    aspect-ratio: 1;
+    background: none;
+    border: 2px solid color-mix(in srgb, var(--brand, #d81b7a) 26%, transparent);
+    border-radius: 55% 45% 30% 70%/50% 35% 65% 50%;
+    transform: rotate(40deg)
+}
+
+.bgart i:nth-child(4) {
+    top: 31%;
+    left: -11vw;
+    width: clamp(200px, 34vw, 480px);
+    background: color-mix(in srgb, var(--brand, #d81b7a) var(--deco), transparent);
+    border-radius: 55% 45% 30% 70%/50% 35% 65% 50%;
+    transform: rotate(12deg)
+}
+
+.bgart i:nth-child(5) {
+    top: 41%;
+    right: 6vw;
+    width: clamp(80px, 11vw, 170px);
+    aspect-ratio: 1;
+    background: color-mix(in srgb, var(--sky) var(--deco), transparent);
+    transform: rotate(-10deg)
+}
+
+.bgart i:nth-child(6) {
+    top: 50%;
+    right: -10vw;
+    width: clamp(200px, 30vw, 440px);
+    border-radius: 38% 62% 40% 60%/60% 40% 60% 40%;
+    transform: rotate(30deg)
+}
+
+.bgart i:nth-child(7) {
+    top: 63%;
+    left: -9vw;
+    width: clamp(180px, 29vw, 420px);
+    background: color-mix(in srgb, var(--sky) var(--deco), transparent);
+    border-radius: 55% 45% 30% 70%/50% 35% 65% 50%;
+    transform: rotate(8deg)
+}
+
+.bgart i:nth-child(8) {
+    top: 73%;
+    left: 9vw;
+    width: clamp(80px, 11vw, 160px);
+    aspect-ratio: 1;
+    background: none;
+    border: 2px solid color-mix(in srgb, var(--sky) 32%, transparent);
+    transform: rotate(-30deg)
+}
+
+.bgart i:nth-child(9) {
+    top: 82%;
+    right: -6vw;
+    width: clamp(170px, 25vw, 360px);
+    background: color-mix(in srgb, var(--brand, #d81b7a) var(--deco), transparent);
+    border-radius: 38% 62% 40% 60%/60% 40% 60% 40%;
+    transform: rotate(-14deg)
+}
+
+.bgart i:nth-child(10) {
+    top: 92%;
+    left: 12vw;
+    width: clamp(100px, 15vw, 220px);
+    background: color-mix(in srgb, var(--sky) var(--deco), transparent);
+    border-radius: 55% 45% 30% 70%/50% 35% 65% 50%;
+    transform: rotate(22deg)
+}

@@ -3,6 +3,7 @@ import { PROJECTS_HEAD, STEPS_HEAD, QUOTE_HEAD } from "@/lib/site";
 import { BRAND, STEPS, LINKS } from "@/lib/content";
 import { Glow } from "@/components/client";
 import Quote from "@/components/Quote";
+import Pattern from "@/components/Pattern";
 
 // هر متنی که با «[» شروع شود صورتی با خط‌چین نشان داده می‌شود (یادآور جای خالی)
 const T = ({ children }) =>
@@ -61,6 +62,8 @@ function ProjectCard({ p }) {
 export default function Page() {
   return (
     <>
+          <Pattern />
+
       <nav className="nav">
         <a className="mini" href="#quote">شروع پروژه <Icon d={PLANE} /></a>
         <ul>
