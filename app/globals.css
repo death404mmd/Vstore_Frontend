@@ -2,10 +2,12 @@
     /* ===== رنگ‌ها: فقط همین بخش را عوض کن ===== */
     --brand: #d81b7a;
     /* رنگ اصلی (صورتی): دکمه‌ها، تیترها، تأکیدها */
-    --brand2: #ff4fa0;
+    --brand2: #0045de;
     /* رنگ روشن‌تر برای گرادیان دکمه‌ها */
     --navy: #16133f;
-    /* سرمه‌ای: باند مراحل، نتیجه قیمت، لپ‌تاپ */
+    /* سرمه‌ای: باند مراحل، نتیجه قیمت */
+    --brand3: #7b3cf0;
+    /* بنفش: فقط برای حرف اول اسم برند (گرادیان) */
     --bg: #ffffff;
     /* پس‌زمینه صفحه */
     --card: #ffffff;
@@ -110,7 +112,10 @@ p {
 
 .logo b,
 .brand b {
-    color: var(--brand)
+    background: linear-gradient(135deg, var(--brand), var(--brand3));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent
 }
 
 .nav ul {
@@ -125,13 +130,41 @@ p {
     color: var(--brand)
 }
 
+.nav li:first-child a {
+    color: var(--brand);
+    position: relative
+}
+
+.nav li:first-child a::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 -6px;
+    height: 3px;
+    border-radius: 99px;
+    background: var(--brand)
+}
+
 .mini {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     font-weight: 700;
     padding: 8px 20px;
     border-radius: 99px;
     border: 2px solid var(--line);
+    box-shadow: rgba(79, 79, 255, 0.25) 0px 6px 12px -2px, rgba(222, 0, 137, 0.712) 0px 3px 7px -3px;
     background: var(--card);
     transition: border-color .15s, color .15s
+}
+
+.mini svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round
 }
 
 .mini:hover {
@@ -280,80 +313,42 @@ section {
     padding: 84px 0
 }
 
-.sec {
-    margin: 0 0 34px;
-    font-size: clamp(28px, 4.4vw, 44px);
-    line-height: 1.3;
-    font-weight: 900;
-    display: flex;
-    align-items: center;
-    gap: 14px
+.shead {
+    margin-bottom: 34px
 }
 
-.sec::before {
+.kick {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--brand);
+    font-weight: 700;
+    font-size: 15px
+}
+
+.kick::before {
     content: "";
-    flex: none;
-    width: 34px;
-    height: 4px;
+    width: 28px;
+    height: 3px;
     border-radius: 99px;
     background: var(--brand)
 }
 
-.sec-sub {
-    margin: -20px 0 32px;
-    color: var(--muted)
-}
-
-.svc {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px
-}
-
-.svc li {
-    padding: 26px;
-    border-radius: 22px;
-    background: var(--card);
-    border: 1px solid var(--line);
-    box-shadow: 0 10px 30px rgba(22, 19, 63, .06);
-    transition: transform .2s, border-color .2s
-}
-
-.svc li:hover {
-    transform: translateY(-4px);
-    border-color: var(--brand)
-}
-
-.svc .n {
-    display: grid;
-    place-items: center;
-    width: 42px;
-    height: 42px;
-    margin-bottom: 14px;
-    border-radius: 50%;
-    background: color-mix(in srgb, var(--brand) 12%, #fff);
-    color: var(--brand);
+.shead h2 {
+    margin: 4px 0 6px;
+    font-size: clamp(28px, 4.4vw, 42px);
+    line-height: 1.3;
     font-weight: 900
 }
 
-.svc b {
-    display: block;
-    margin-bottom: 6px;
-    font-size: 22px;
-    font-weight: 900
-}
-
-.svc p {
+.shead p {
     color: var(--muted)
 }
 
 .works {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 22px
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px
 }
 
 .work {
@@ -362,21 +357,23 @@ section {
     overflow: hidden;
     border-radius: 22px;
     background: var(--card);
+    box-shadow: rgba(79, 79, 255, 0.747) 0px 7px 12px -2px, rgba(222, 0, 137, 0.836) 0px 3px 7px -3px;
     border: 1px solid var(--line);
-    box-shadow: 0 10px 30px rgba(22, 19, 63, .07);
-    transition: transform .2s
+    transition: transform .2s, box-shadow .2s
 }
 
-.work:hover {
-    transform: translateY(-5px)
+a.work:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 44px color-mix(in srgb, var(--brand) 22%, transparent)
 }
 
 .pic {
-    aspect-ratio: 16/8;
+    aspect-ratio: 16/7;
     display: grid;
     place-items: center;
     overflow: hidden;
     color: var(--muted);
+    box-shadow: rgba(79, 79, 255, 0.25) 0px 6px 12px -2px, rgba(222, 0, 137, 0.712) 0px 3px 7px -3px;
     background: repeating-linear-gradient(135deg, #f1f0f8 0 12px, #fff 12px 24px)
 }
 
@@ -384,10 +381,11 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center;
     transition: transform .5s
 }
 
-.work:hover img {
+a.work:hover img {
     transform: scale(1.05)
 }
 
@@ -421,10 +419,11 @@ section {
     height: 34px;
     border-radius: 10px;
     border: 1px solid var(--line);
-    color: var(--muted)
+    color: var(--muted);
+    transition: color .2s, border-color .2s
 }
 
-.ext:hover {
+a.work:hover .ext {
     color: var(--brand);
     border-color: var(--brand)
 }
@@ -433,11 +432,11 @@ section {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 6px
+    margin-top: 8px
 }
 
 .tag {
-    padding: 2px 12px;
+    padding: 2px 14px;
     border-radius: 99px;
     background: #f1f0f8;
     color: #4a4772;
@@ -455,8 +454,12 @@ section {
 .band {
     position: relative;
     overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: 40px;
+    align-items: center;
     border-radius: 30px;
-    padding: 44px 40px;
+    padding: 46px 44px;
     background: var(--navy);
     color: #fff
 }
@@ -464,41 +467,43 @@ section {
 .band::before {
     content: "";
     position: absolute;
-    left: -140px;
-    bottom: -160px;
-    width: 300px;
-    height: 300px;
+    left: -200px;
+    bottom: -220px;
+    width: 320px;
+    height: 320px;
     border-radius: 50%;
     background: radial-gradient(circle at 40% 40%, var(--brand2), var(--brand) 60%, transparent 72%);
     opacity: .9
 }
 
+.bandtext,
+.steps {
+    position: relative
+}
+
 .band h2 {
-    position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 12px;
     font-size: clamp(26px, 4vw, 38px);
     font-weight: 900
 }
 
+.bandtext p {
+    margin-bottom: 22px;
+    color: rgba(255, 255, 255, .8)
+}
+
 .steps {
-    position: relative;
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px 24px;
     counter-reset: s
 }
 
 .steps li {
-    counter-increment: s;
-    padding: 0 22px;
-    border-inline-start: 1px solid rgba(255, 255, 255, .16)
-}
-
-.steps li:first-child {
-    border: 0;
-    padding-inline-start: 0
+    counter-increment: s
 }
 
 .steps li::before {
@@ -507,7 +512,7 @@ section {
     place-items: center;
     width: 52px;
     height: 52px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     border-radius: 50%;
     border: 2px solid var(--brand2);
     color: var(--brand2);
@@ -578,7 +583,7 @@ section {
     display: block;
     padding: 8px 16px;
     border-radius: 99px;
-    border: 2px solid var(--line);
+    border: 2px solid var(--brand);
     background: var(--card);
     font-weight: 600;
     transition: background .15s, border-color .15s
@@ -590,7 +595,8 @@ section {
 
 .opt:has(input:checked) span {
     background: var(--brand);
-    border-color: var(--brand);
+    border-color: var(--brand3);
+    box-shadow: rgba(79, 79, 255, 0.25) 0px 6px 12px -2px, rgba(222, 0, 137, 0.712) 0px 3px 7px -3px;
     color: #fff
 }
 
@@ -743,16 +749,12 @@ dialog h3 {
         padding: 10px 0 56px
     }
     .band {
+        grid-template-columns: 1fr;
+        gap: 28px;
         padding: 30px 22px
     }
     .steps {
-        grid-template-columns: 1fr;
-        gap: 22px
-    }
-    .steps li,
-    .steps li:first-child {
-        padding: 0;
-        border: 0
+        gap: 22px 16px
     }
     .tabbar {
         position: fixed;
